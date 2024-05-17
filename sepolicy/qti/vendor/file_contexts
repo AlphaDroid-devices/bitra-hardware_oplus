@@ -118,21 +118,18 @@
 /(vendor|system/vendor)/bin/hw/vendor\.oplus\.hardware\.cameraMDM@1\.0-service                                                       u:object_r:vendor_hal_cameraMDM_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oplus\.hardware\.cameraMDM@2\.0-service                                                       u:object_r:vendor_hal_cameraMDM_default_exec:s0
 
-# Charging
-/sys/devices/virtual/oplus_chg/battery/voocchg_ing     u:object_r:vendor_sysfs_battery_supply:s0
+# Battery
+/sys/devices/virtual/oplus_chg/battery/mmi_charging_enable            u:object_r:vendor_sysfs_battery_supply:s0
+/sys/devices/virtual/oplus_chg/battery/voocchg_ing                    u:object_r:vendor_sysfs_battery_supply:s0
 
 # Display
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.oplus    u:object_r:hal_lineage_livedisplay_qti_exec:s0
 /dev/oplus_display                                                                 u:object_r:graphics_device:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.oplus    u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Display (Pixelworks)
 /(odm|vendor/odm)/bin/hw/vendor\.pixelworks\.hardware\.display\.iris-service           u:object_r:hal_graphics_composer_default_exec:s0
 /(odm|vendor/odm)/bin/hw/vendor\.pixelworks\.hardware\.feature\.irisfeature-service    u:object_r:hal_graphics_composer_default_exec:s0
-
-# Dolby
-/data/vendor/dolby(/.*)?                                                               u:object_r:vendor_data_file:s0
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service               u:object_r:hal_dms_default_exec:s0
-/(vendor|system/vendor|odm)/bin/hw/vendor\.dolby_v3_6\.hardware\.dms360@2\.0-service   u:object_r:hal_dms_default_exec:s0
 
 # Engineering
 /mnt/vendor/persist/engineermode(/.*)?    u:object_r:vendor_persist_engineer_file:s0
@@ -153,6 +150,7 @@
 /(odm|vendor/odm)/bin/sensor_recover\.sh       u:object_r:vendor_qti_init_shell_exec:s0
 /(odm|vendor/odm)/bin/init\.network\.minidump\.sh    u:object_r:vendor_qti_init_shell_exec:s0
 /(odm|vendor/odm)/bin/init\.network\.removedump\.sh    u:object_r:vendor_qti_init_shell_exec:s0
+
 # Light
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light-service\.oplus                                                 u:object_r:hal_light_default_exec:s0
 
